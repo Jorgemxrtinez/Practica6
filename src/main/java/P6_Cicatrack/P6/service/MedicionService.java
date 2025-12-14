@@ -11,24 +11,24 @@ import java.util.List;
 public class MedicionService {
 
     @Autowired
-    private MedicionRepository repository; // Inyectamos el repositorio que acabamos de crear
+    private MedicionRepository repository;
 
-    // 1. Crear o Guardar
+    // Guardar una nueva medición (simula que el vendaje envía datos)
     public void guardar(Medicion medicion) {
         repository.save(medicion);
     }
 
-    // 2. Leer todas
+    // Consultar historial (RF14)
     public List<Medicion> listarTodas() {
         return repository.findAll();
     }
 
-    // 3. Leer una por ID
+    // Obtener una específica para editar
     public Medicion obtenerPorId(Long id) {
         return repository.findById(id).orElse(null);
     }
 
-    // 4. Eliminar
+    // Eliminar (por si hay error de lectura)
     public void eliminar(Long id) {
         repository.deleteById(id);
     }
