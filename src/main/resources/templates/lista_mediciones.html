@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cica-Track - Historial</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .btn { padding: 5px 10px; text-decoration: none; border-radius: 4px; color: white; }
+        .btn-crear { background-color: #28a745; }
+        .btn-editar { background-color: #007bff; }
+        .btn-borrar { background-color: #dc3545; }
+    </style>
+</head>
+<body>
+    <h1> Monitorización Cica-Track</h1>
+
+    <a th:href="@{/mediciones/nueva}" class="btn btn-crear">+ Nueva Lectura Manual</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Temperatura (ºC)</th>
+                <th>pH</th>
+                <th>Humedad (%)</th>
+                <th>Fecha Registro</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="m : ${mediciones}">
+                <td th:text="${m.id}"></td>
+                <td th:text="${m.temperatura}"></td>
+                <td th:text="${m.ph}"></td>
+                <td th:text="${m.humedad}"></td>
+                <td th:text="${m.fechaRegistro}"></td>
+                <td>
+                    <a th:href="@{/mediciones/editar/{id}(id=${m.id})}" class="btn btn-editar">Editar</a>
+                    <a th:href="@{/mediciones/eliminar/{id}(id=${m.id})}" class="btn btn-borrar" 
+                       onclick="return confirm('¿Estás seguro de borrar este registro?');">Borrar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cica-Track - Historial</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .btn { padding: 5px 10px; text-decoration: none; border-radius: 4px; color: white; }
+        .btn-crear { background-color: #28a745; }
+        .btn-editar { background-color: #007bff; }
+        .btn-borrar { background-color: #dc3545; }
+    </style>
+</head>
+<body>
+    <h1> Monitorización Cica-Track</h1>
+
+    <a th:href="@{/mediciones/nueva}" class="btn btn-crear">+ Nueva Lectura Manual</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Temperatura (ºC)</th>
+                <th>pH</th>
+                <th>Humedad (%)</th>
+                <th>Fecha Registro</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="m : ${mediciones}">
+                <td th:text="${m.id}"></td>
+                <td th:text="${m.temperatura}"></td>
+                <td th:text="${m.ph}"></td>
+                <td th:text="${m.humedad}"></td>
+                <td th:text="${m.fechaRegistro}"></td>
+                <td>
+                    <a th:href="@{/mediciones/editar/{id}(id=${m.id})}" class="btn btn-editar">Editar</a>
+                    <a th:href="@{/mediciones/eliminar/{id}(id=${m.id})}" class="btn btn-borrar" 
+                       onclick="return confirm('¿Estás seguro de borrar este registro?');">Borrar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
