@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "mediciones")
-public class sousa {
+public class Medicion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +22,11 @@ public class sousa {
 
     private LocalDateTime fechaRegistro;
 
-    public sousa() {
+    public Medicion() {
         this.fechaRegistro = LocalDateTime.now();
     }
 
-    public sousa(Double temperatura, Double ph, Double humedad) {
+    public Medicion(Double temperatura, Double ph, Double humedad) {
         this.temperatura = temperatura;
         this.ph = ph;
         this.humedad = humedad;
