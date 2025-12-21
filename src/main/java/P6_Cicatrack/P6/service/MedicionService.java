@@ -1,11 +1,12 @@
 package P6_Cicatrack.P6.service;
 
-import P6_Cicatrack.P6.model.Medicion;
-import P6_Cicatrack.P6.repository.MedicionRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import P6_Cicatrack.P6.model.Medicion;
+import P6_Cicatrack.P6.repository.MedicionRepository;
 
 @Service
 public class MedicionService {
