@@ -5,7 +5,9 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.2</version> <relativePath/> </parent>
+		<version>3.5.8</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
 	<groupId>P6-Cicatrack</groupId>
 	<artifactId>P6</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -64,13 +66,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.11</version>
-				<executions>
+				<version>0.8.11</version> <executions>
 					<execution>
 						<id>prepare-agent</id>
 						<goals>
@@ -86,7 +88,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			</plugins>
+		</plugins>
 	</build>
 
 </project>
